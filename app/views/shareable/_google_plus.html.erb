@@ -1,0 +1,21 @@
+<div class='g-plusone gplusshare'
+     data-href='<%= options[:url] %>'
+     data-size='<%= options[:size] %>'
+     data-annotation='<%= options[:annotation] %>'
+     data-width='<%= options[:width] %>'
+     data-align='<%= options[:align] %>'
+     data-expandTo='<%= options[:expand_to] %>'
+     data-callback='<%= options[:callback] %>'
+     data-onstartinteraction='<%= options[:onstartinteraction] %>'
+     data-onendinteraction='<%= options[:onendinteraction] %>'
+     data-recommendations='<%= options[:recommendations] %>'
+></div>
+<%= output_once :google_plus do %>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<% end %>

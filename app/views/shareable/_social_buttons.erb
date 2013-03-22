@@ -1,0 +1,7 @@
+<nav class="share">
+  <%= social_buttons.render do -%>
+      <% each_button do |button| -%>
+          <%= eval button + '_tag' %>
+      <% end -%>
+  <% end -%>
+</nav>
