@@ -6,7 +6,7 @@ A simple and unobtrusive gem for adding social link sharing to your Rails app. S
   - Pinterest
   - Reddit
   - Linkedin
-  - & Google Plus
+  - Google Plus
 
 Install
 --------
@@ -99,4 +99,4 @@ To Do:
 - More buttons.
 - More.
 
-This project is based on Akira Matsuda's Kamanari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
+This project is based on Akira Matsuda's Kaminari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
