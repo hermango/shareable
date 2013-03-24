@@ -56,7 +56,7 @@ The helper method for each social link, is the site name joined with an undersco
 ```
 
 To override the default view for a button, place your own template file in the
-app/views/shareable/ directory and prepend your filename with an underscore.
+app/views/shareable/ directory of your app and prepend your filename with an underscore.
 
 E.g.: facebook_button -> app/views/shareable/_facebook.html.erb
 
