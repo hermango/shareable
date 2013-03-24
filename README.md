@@ -26,9 +26,9 @@ To add shareable in views use any of the following methods:
 + facebook_button
 + twitter_button
 + pinterest_button
++ linkedin_button
 + reddit_button
 + google_plus_button
-...
 
 For the easiest way to use shareable, add this helper method to your view:
 
@@ -97,6 +97,5 @@ To Do:
 ---------
 - Add Tests.
 - More buttons.
-- More.
 
 This project is based on Akira Matsuda's Kaminari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
