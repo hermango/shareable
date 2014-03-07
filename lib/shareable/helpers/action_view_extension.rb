@@ -32,6 +32,9 @@ module Shareable
     def refine_options(options={},button=nil)
       options[:options] ||= {}
       options[:options].merge! options.except(:options)
+      if options.has_key?(:buttons) then
+        options[:buttons].map!(&:to_s)
+      end
       if options[:url].blank? then
         options[:options][:url] = request.url
       end
