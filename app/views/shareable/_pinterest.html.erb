@@ -1,7 +1,7 @@
-<a data-pin-config='<%= options[:pin_config] %>'
+<a data-pin-config="<%= options[:pin_config] %>"
    href="//pinterest.com/pin/create/button/?url=<%= options[:url] %><%= raw('&media=' + options[:media]) unless options[:media].blank? %><%= raw('&description=' + options[:description]) unless options[:description].blank? %>"
-   data-pin-do='<%= options[:pin_do] %>' >
-  <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" title='<%= options[:title]%>' alt='<%= options[:alt] %>' /></a>
+   data-pin-do="<%= options[:pin_do] %>" >
+  <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" title="<%= options[:title]%>" alt="<%= options[:alt] %>" /></a>
 
 <%= output_once :pinterest do %>
 <script type="text/javascript">

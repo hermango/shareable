@@ -12,15 +12,6 @@
   </script>
 <% end -%>
 
-<a href='http://twitter.com/share'
-   class='twitter-share-button'
-   data-url='<%= options[:url] %>'
-   data-via='<%= options[:via] %>'
-   data-text='<%= options[:text] %>'
-   data-related='<%= options[:related] %>'
-   data-count='<%= options[:count] %>'
-   data-lang='<%= options[:lang] %>'
-   data-counturl='<%= options[:counturl] %>'
-   data-hashtags='<%= options[:hashtags] %>'
-   data-size='<%= options[:size] %>'
-   data-dnt='<%= options[:dnt] %>'>Tweet</a>
+<a href="http://twitter.com/share" class="twitter-share-button"
+  <%= html_attributes(options.slice(:url, :via, :text, :related, :count, :lang, :counturl, :hashtags, :size, :dnt), :data => true) %>
+>Tweet</a>
