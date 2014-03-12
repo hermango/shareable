@@ -3,6 +3,18 @@ require 'shareable/helpers/social_buttons'
 module Shareable
   # = Helpers
   module ActionViewExtension
+    def html_attributes(attributes, opts={})
+      opts = {
+        :data => false
+      }.merge(opts)
+
+      attributes.map { |(k, v)|
+        if v.present?
+          %{#{opts[:data] ? 'data-' : ''}#{k.to_s.camelize(:lower)}="#{html_escape( v )}"}.html_safe
+        end
+      }.compact.join( " " ).html_safe
+    end
+
     # A helper that renders social links
     #   <%= render_shareable [options] %>
     def render_shareable(options = {}, &block)
