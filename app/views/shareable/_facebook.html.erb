@@ -9,6 +9,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <% end %>
 
-<fb:like
-  <%= html_attributes(options.slice(:url, :send, :layout, :show_faces, :width, :action, :font, :colorscheme, :ref)) %>
-></fb:like>
+<div class="fb-like"
+  <%= html_attributes(options.slice(:url, :send, :layout, :show_faces, :width, :action, :font, :colorscheme, :ref), :data => true) %>
+></div>
