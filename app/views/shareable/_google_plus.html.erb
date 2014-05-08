@@ -1,14 +1,5 @@
-<div class='g-plusone gplusshare'
-     data-href='<%= options[:url] %>'
-     data-size='<%= options[:size] %>'
-     data-annotation='<%= options[:annotation] %>'
-     data-width='<%= options[:width] %>'
-     data-align='<%= options[:align] %>'
-     data-expandTo='<%= options[:expand_to] %>'
-     data-callback='<%= options[:callback] %>'
-     data-onstartinteraction='<%= options[:onstartinteraction] %>'
-     data-onendinteraction='<%= options[:onendinteraction] %>'
-     data-recommendations='<%= options[:recommendations] %>'
+<div class="g-plusone gplusshare"
+  <%= html_attributes(options.slice(:url, :size, :annotation, :width, :align, :expand_to, :callback, :onstartinteraction, :onendinteraction, :recommendations), :data => true) %>
 ></div>
 <%= output_once :google_plus do %>
 <script type="text/javascript">
