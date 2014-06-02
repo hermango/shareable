@@ -12,8 +12,13 @@
 </script>
     <% unless options[:button_only] %>
 <script type="text/javascript"
+<<<<<<< HEAD
 src="<%= raw((options[:btnsrc].blank? ? ('http://www.reddit.com/static/button/button' + options[:type] + '.js?i=' + options[:points]) : options[:btnsrc]) + '&styled=' + options[:styled]) %>">
 </script>
     <% end %>
   <% end %>
 <% end %>
+=======
+src="<%= raw((options[:btnsrc].blank? ? ('//www.reddit.com/static/button/button' + options[:type] + '.js?i=' + options[:points]) : options[:btnsrc]) + '&styled=' + options[:styled]) %>">
+</script>
+>>>>>>> 88f86b10e640799e071dc79b7b08d035144866c6
