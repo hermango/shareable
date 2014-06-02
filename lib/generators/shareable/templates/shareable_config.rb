@@ -1,5 +1,11 @@
 Shareable.configure do |config|
-  #config.names = %w[ twitter facebook linkedin pinterest google_plus reddit ]
+
+  # valid names are:
+  # twitter facebook pinterest reddit google_plus linkedin tumblr stumble_upon
+  #config.names = %w[ twitter facebook linkedin pinterest google_plus reddit tumblr stumble_upon ]
+
+  #config.button_only=false # omit initializing javacript. Only button code is rendered.
+  #config.static_link=false # renders non-javascript html links.
 
   ##############
   #facebook
@@ -8,11 +14,12 @@ Shareable.configure do |config|
   #config.send= 'false'
   #config.layout=''
   #config.show_faces=''
-  #config.width='80'
   #config.action=''
   #config.font=''
   #config.colorscheme=''
   #config.ref=''
+  #config.share=''
+  #config.kid_directed_site=''
 
   ##############
   #google_plus
@@ -38,10 +45,8 @@ Shareable.configure do |config|
   ##############
   #config.pin_config = 'none'
   #config.pin_do = 'buttonPin'
-  #config.title= '' # title for content, also used by reddit button
   #config.alt='' # alternate text for image tag
   #config.media=''
-  #config.description='Pin This'
 
   ##############
   #reddit
@@ -67,4 +72,22 @@ Shareable.configure do |config|
   #config.hashtags=''
   #config.size='medium'
   #config.dnt=''
+
+  ##############
+  #stumble_upon
+  ##############
+  #config.badge_layout='1'
+
+  ##############
+  #tumblr
+  ##############
+  #config.background='share_1.png'
+
+  ##############
+  #shared configuration options
+  ##############
+  #config.width='80' # used by facebook and tumblr
+  #config.title= '' # used by linkedin, pinterest, reddit, stumbleupon and tumblr
+  #config.description='' # used by linkedin and tumblr
+
 end

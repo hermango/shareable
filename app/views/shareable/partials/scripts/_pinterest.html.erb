@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  (function (d, buildThese) {
+    var homeScript, newScript, n = buildThese.length, i;
+    for (i = 0; i < n; i = i + 1) {
+      newScript = d.createElement('SCRIPT');
+      newScript.type = 'text/javascript';
+      newScript.async = true;
+      newScript.src = buildThese[i];
+      homeScript = d.getElementsByTagName('SCRIPT')[0];
+      homeScript.parentNode.insertBefore(newScript, homeScript);
+    }
+  }(document, [
+    '//assets.pinterest.com/js/pinit.js'
+    /* load more third-party JavaScript here */
+  ])
+  );
+</script>

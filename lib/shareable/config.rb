@@ -19,11 +19,15 @@ module Shareable
                     :onstartinteraction, :onendinteraction, :pin_config, :pin_do, :media, :color,
                     :bordercolor, :btnsrc, :via, :text, :related, :count, :lang, :counturl, :hashtags, :size, :dnt,
                     :type, :styled, :newwindow, :description, :counter, :onsuccess, :onerror, :showzero,
-                    :recommendations, :points
+                    :recommendations, :points, :badge_layout, :background, :share, :kid_directed_site,
+                    :button_only, :static_link
   end
 
   configure do |config|
     config.names = %w[ twitter facebook linkedin pinterest google_plus reddit ]
+
+    config.button_only=false # omit initializing javacript. Only button code is rendered.
+    config.static_link=false # renders non-javascript html links.
 
     ##############
     #facebook
@@ -32,11 +36,12 @@ module Shareable
     config.send= 'false'
     config.layout='button_count'
     config.show_faces=''
-    config.width='80'
     config.action=''
     config.font=''
     config.colorscheme=''
     config.ref=''
+    config.share=''
+    config.kid_directed_site=''
 
     ##############
     #google_plus
@@ -62,10 +67,8 @@ module Shareable
     ##############
     config.pin_config = 'beside'
     config.pin_do = 'buttonPin'
-    config.title= '' # title for content, also used by reddit button
     config.alt='' # alternate text for image tag
     config.media=''
-    config.description='Pin This'
 
     ##############
     #reddit 
@@ -91,5 +94,22 @@ module Shareable
     config.hashtags=''
     config.size='medium'
     config.dnt=''
+
+    ##############
+    #stumble_upon
+    ##############
+    config.badge_layout='1'
+
+    ##############
+    #tumblr
+    ##############
+    config.background='share_1.png'
+
+    ##############
+    #shared configuration options
+    ##############
+    config.width='80' # used by facebook and tumblr
+    config.title= '' # used by linkedin, pinterest, reddit, stumbleupon and tumblr
+    config.description='' # used by linkedin and tumblr
   end
 end

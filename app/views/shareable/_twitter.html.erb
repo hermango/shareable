@@ -1,17 +1,21 @@
-<%- if defined?(Turbolinks) %>
-  <%= output_once :twitter do %>
-    <script src="//platform.twitter.com/widgets.js"></script>
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"https://twitter.com/intent/tweet?url=#{options[:url]}&text=#{options[:text]}&hashtags=#{options[:hashtags]}") %>
   <% end %>
-<% else -%>
-  <script>!function(d,s,id){
-    var js,fjs=d.getElementsByTagName(s)[0];
-    if(!d.getElementById(id)){
-        js=d.createElement(s);
-        js.id=id;js.src="//platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js,fjs);}} (document,"script","twitter-wjs");
-  </script>
-<% end -%>
-
+<% else %>
+  <% if tl = (defined?(Turbolinks) && !(options[:button_only])) %>
+    <%= output_once :twitter do %>
+<script src="//platform.twitter.com/widgets.js"></script>
+    <% end %>
+  <% end %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <a href="http://twitter.com/share" class="twitter-share-button"
   <%= html_attributes(options.slice(:url, :via, :text, :related, :count, :lang, :counturl, :hashtags, :size, :dnt), :data => true) %>
 >Tweet</a>
+  <% end %>
+  <% unless tl %>
+    <%= output_once :twitter do %>
+      <%= render "shareable/partials/scripts/twitter" %> 
+    <% end %>
+  <% end %>
+<% end %>

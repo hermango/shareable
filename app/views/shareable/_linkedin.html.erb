@@ -1,4 +1,14 @@
-<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.linkedin.com/shareArticle?url=#{options[:url]}&title=#{options[:title]}&summary=#{options[:description]}") %>
+  <% end %>
+<% else %>
+  <% unless options[:button_only] %>
+    <%= render "shareable/partials/scripts/linkedin" %> 
+  <% end %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <script type="IN/Share"
   <%= html_attributes(options.slice(:url, :counter, :onerror, :onsuccess, :showzero), :data => true) %>
 ></script>
+  <% end %>
+<% end %>

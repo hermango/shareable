@@ -1,0 +1,14 @@
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"https://www.stumbleupon.com/submit?url=#{options[:url]}&title=#{options[:title]}") %>
+  <% end %>
+<% else %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+<su:badge layout="<%= options[:badge_layout]%>" location="<%= options[:url] %>"></su:badge>
+  <% end %>
+  <% unless options[:button_only] %>
+    <%= output_once :stumble_upon do %>
+      <%= render "shareable/partials/scripts/stumble_upon" %> 
+    <% end %>
+  <% end %>
+<% end %>

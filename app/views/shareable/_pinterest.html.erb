@@ -1,24 +1,17 @@
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"http://pinterest.com/pin/create/button/?url=#{options[:url]}&description=#{options[:description]}&media=#{options[:media]}") %>
+  <% end %>
+<% else %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <a data-pin-config="<%= options[:pin_config] %>"
    href="//pinterest.com/pin/create/button/?url=<%= options[:url] %><%= raw('&media=' + options[:media]) unless options[:media].blank? %><%= raw('&description=' + options[:description]) unless options[:description].blank? %>"
    data-pin-do="<%= options[:pin_do] %>" >
   <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" title="<%= options[:title]%>" alt="<%= options[:alt] %>" /></a>
-
-<%= output_once :pinterest do %>
-<script type="text/javascript">
-  (function (d, buildThese) {
-    var homeScript, newScript, n = buildThese.length, i;
-    for (i = 0; i < n; i = i + 1) {
-      newScript = d.createElement('SCRIPT');
-      newScript.type = 'text/javascript';
-      newScript.async = true;
-      newScript.src = buildThese[i];
-      homeScript = d.getElementsByTagName('SCRIPT')[0];
-      homeScript.parentNode.insertBefore(newScript, homeScript);
-    }
-  }(document, [
-    '//assets.pinterest.com/js/pinit.js'
-    /* load more third-party JavaScript here */
-  ])
-  );
-</script>
+  <% end %>
+  <% unless options[:button_only] %>
+    <%= output_once :pinterest do %>
+      <%= render "shareable/partials/scripts/pinterest" %> 
+    <% end %>
+  <% end %>
 <% end %>

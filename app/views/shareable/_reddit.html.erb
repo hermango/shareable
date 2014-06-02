@@ -1,3 +1,7 @@
+<%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+  <% if options[:static_link] %>
+  <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.reddit.com/submit?url=#{options[:url]}&title=#{options[:title]}") %>
+  <% else %>
 <script type="text/javascript">
     reddit_url='<%= options[:url] %>';
     reddit_target='<%= options[:target]%>';
@@ -6,6 +10,10 @@
     reddit_bordercolor='<%= options[:bordercolor] %>';
     reddit_newwindow='<%= options[:newwindow] %>';
 </script>
+    <% unless options[:button_only] %>
 <script type="text/javascript"
 src="<%= raw((options[:btnsrc].blank? ? ('http://www.reddit.com/static/button/button' + options[:type] + '.js?i=' + options[:points]) : options[:btnsrc]) + '&styled=' + options[:styled]) %>">
 </script>
+    <% end %>
+  <% end %>
+<% end %>

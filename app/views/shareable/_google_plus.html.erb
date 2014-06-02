@@ -1,12 +1,16 @@
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"https://plus.google.com/share?url=#{options[:url]}") %>
+  <% end %>
+<% else %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <div class="g-plusone gplusshare"
   <%= html_attributes(options.slice(:url, :size, :annotation, :width, :align, :expand_to, :callback, :onstartinteraction, :onendinteraction, :recommendations), :data => true) %>
 ></div>
-<%= output_once :google_plus do %>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
+  <% end %>
+  <% unless options[:button_only] %>
+    <%= output_once :google_plus do %>
+      <%= render "shareable/partials/scripts/google_plus" %>
+    <% end %>
+  <% end %>
 <% end %>

@@ -1,14 +1,16 @@
-<%= output_once :facebook do %>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1<%= raw('&appId=' + options[:app_id]) unless options[:app_id].empty? %>";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<% end %>
-
+<% if options[:static_link] %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"https://www.facebook.com/sharer.php?u=#{options[:url]}") %>
+  <% end %>
+<% else %>
+  <% unless options[:button_only] %>
+    <%= output_once :facebook do %>
+      <%= render "shareable/partials/scripts/facebook", :app_id => options[:app_id] %> 
+    <% end %>
+  <% end %>
+  <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <div class="fb-like"
-  <%= html_attributes(options.slice(:url, :send, :layout, :show_faces, :width, :action, :font, :colorscheme, :ref), :data => true) %>
+  <%= html_attributes(options.slice(:url, :send, :layout, :show_faces, :width, :action, :font, :colorscheme, :ref, :share, :kid_directed_site), :data => true) %>
 ></div>
+  <% end %>
+<% end %>

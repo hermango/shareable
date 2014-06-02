@@ -8,9 +8,10 @@ module Shareable
         :data => false
       }.merge(opts)
 
+      prefix = opts[:data] ? 'data-' : ''
       attributes.map { |(k, v)|
         if v.present?
-          %{#{opts[:data] ? 'data-' : ''}#{k.to_s.camelize(:lower)}="#{html_escape( v )}"}.html_safe
+          %{#{prefix}#{k.to_s.camelize(:lower)}="#{html_escape( v )}"}.html_safe
         end
       }.compact.join( " " ).html_safe
     end
