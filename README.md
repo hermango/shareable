@@ -1,12 +1,16 @@
 Shareable
 =========
-A simple and unobtrusive gem for adding social link sharing to your Rails app. Supported social sites include:
+A simple and unobtrusive gem for adding social buttons or static links to your Rails app. Supported social sites include:
   - Facebook
   - Twitter
   - Pinterest
   - Reddit
   - Linkedin
   - Google Plus
+  - Tumblr<sup>*</sup>
+  - StumbleUpon<sup>*</sup>
+
+<sub>*Tumblr and StumbleUpon buttons are not rendered by default configuration.</sub>
 
 Install
 --------
@@ -21,7 +25,7 @@ Then run the bundle command:
 Usage
 ------
 ### Views
-To add shareable in views use any of the following methods:
+Use any of the following methods to display shareable in your views:
 + render_shareable
 + facebook_button
 + twitter_button
@@ -29,12 +33,27 @@ To add shareable in views use any of the following methods:
 + linkedin_button
 + reddit_button
 + google_plus_button
++ tumblr_button
++ stumble_upon_button
 
-For the easiest way to use shareable, add this helper method to your view:
+For the easiest and most standard way of adding shareable, use this helper method in your view:
 
 ```no-highlight
 <%= render_shareable %>
 ```
+
+#### Static Links
+
+Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option 'static_link' to *true* in your local shareable.rb configuration file or pass 'static_link' when calling a shareable method like so:
+
+```no-highlight
+<%= render_shareable :static_link => true %>
+```
+
+#### Tumblr and StumbleUpon Buttons
+
+By default Tumblr and StumbleUpon are disabled. To enable either button, include the name of the button you want to add (*tumblr* or *stumble_upon*) in the configuration option 'names' found in your shareable.rb configuration file. [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
+
 
 ### Advanced Usage
 Pass hash values to the render_shareable method to overwrite options locally:
@@ -44,7 +63,7 @@ Pass hash values to the render_shareable method to overwrite options locally:
 
 To render only certain buttons:
 ```no-highlight
-<%= render_shareable :buttons=> ['twitter', 'facebook'] %>
+<%= render_shareable :buttons=> ['twitter', 'facebook', 'tumblr'] %>
 ```
 
 Alternatively, omit the render_shareable method entirely and instead add each social link individually.
@@ -88,14 +107,9 @@ Configuration
 ------------
 Use shareable's default configuration settings or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
 
-A generator is available for generating the default configuration file into the 'config/initializers' directory.
+A generator is available for generating the default configuration file into your project's 'config/initializers' directory.
 Run the following generator command, then edit the generated file.
 
 rails g shareable:config
 
-To Do:
----------
-- Add Tests.
-- More buttons.
-
-This project is based on Akira Matsuda's Kaminari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
+This project was inspired by Akira Matsuda's Kaminari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
