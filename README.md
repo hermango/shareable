@@ -10,7 +10,7 @@ A simple and unobtrusive gem for adding social buttons or static links to your R
   - Tumblr<sup>*</sup>
   - StumbleUpon<sup>*</sup>
 
-<sub>*Tumblr and StumbleUpon buttons are not rendered by default configuration.</sub>
+<sub>*Tumblr and StumbleUpon buttons are not rendered by default.</sub>
 
 Install
 --------
