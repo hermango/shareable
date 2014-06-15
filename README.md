@@ -1,6 +1,6 @@
 Shareable
 =========
-A simple and unobtrusive gem for adding social buttons or static links to your Rails app. Supported social sites include:
+A simple gem for adding social buttons to your Rails app. Shareable runs with zero configuration and offers a wide range of customization features. Rendering javascript buttons and static links is easy. The available social media sites include:
   - Facebook
   - Twitter
   - Pinterest
@@ -10,7 +10,9 @@ A simple and unobtrusive gem for adding social buttons or static links to your R
   - Tumblr<sup>*</sup>
   - StumbleUpon<sup>*</sup>
 
-<sub>*Tumblr and StumbleUpon buttons are not rendered by default.</sub>
+<sub>*Tumblr and StumbleUpon buttons aren't rendered by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
+
+The shareable gem supports Rails 3 and 4. 
 
 Install
 --------
@@ -25,8 +27,16 @@ Then run the bundle command:
 Usage
 ------
 ### Views
-Use any of the following methods to display shareable in your views:
-+ render_shareable
+
+For the simplest way of using shareable, add this helper method to your views:
+
+```no-highlight
+<%= render_shareable %>
+```
+
+That's it! You can customize the look and content of each button with more options. Keep reading to find out how.
+
+You can also call the render button method for each social media site separately by calling any of the following methods:
 + facebook_button
 + twitter_button
 + pinterest_button
@@ -36,15 +46,9 @@ Use any of the following methods to display shareable in your views:
 + tumblr_button
 + stumble_upon_button
 
-For the easiest and most standard way of adding shareable, use this helper method in your view:
-
-```no-highlight
-<%= render_shareable %>
-```
-
 #### Static Links
 
-Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option 'static_link' to *true* in your local shareable.rb configuration file or pass 'static_link' when calling a shareable method like so:
+Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option *static_link* to boolean value **true** in your app's local shareable.rb configuration file. You can also pass *static_link* to your render_shareable method like so:
 
 ```no-highlight
 <%= render_shareable :static_link => true %>
@@ -52,13 +56,13 @@ Shareable generates javascript buttons by default. To render plain html links in
 
 #### Tumblr and StumbleUpon Buttons
 
-By default Tumblr and StumbleUpon are disabled. To enable either button, include the name of the button you want to add (*tumblr* or *stumble_upon*) in the configuration option 'names' found in your shareable.rb configuration file. [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
+By default the display of the Tumblr and StumbleUpon buttons is disabled. Enable either button by including the name of the button you want to add (**tumblr** or **stumble_upon**) to configuration option *names* (found in your local shareable.rb configuration file). [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
 
 
 ### Advanced Usage
 Pass hash values to the render_shareable method to overwrite options locally:
 ```no-highlight
-<%= render_shareable :url=> 'http://github.com/hermango/', :facebook=> {:send=> 'true', :url=> 'http://demo.com'} %>
+<%= render_shareable :url=> 'http://github.com/hermango/', :facebook=> {:send=> 'true', :url=> 'http://demo.dev'} %>
 ```
 
 To render only certain buttons:
