@@ -56,7 +56,7 @@ Shareable generates javascript buttons by default. To render plain html links in
 
 #### Tumblr and StumbleUpon Buttons
 
-By default the display of the Tumblr and StumbleUpon buttons is disabled. Enable either button by including the name of the button you want to add (**tumblr** or **stumble_upon**) to configuration option *names* (found in your local shareable.rb configuration file). [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
+By default the display of Tumblr and StumbleUpon buttons is disabled. Enable either button by including the name of the button you want to add (**tumblr** or **stumble_upon**) to configuration option *names* (found in your local shareable.rb configuration file). [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
 
 
 ### Advanced Usage
