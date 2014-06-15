@@ -36,7 +36,7 @@ For the simplest way of using shareable, add this helper method to your views:
 
 That's it! You can customize the look and content of each button with more options. Keep reading to find out how.
 
-You can also call the render button method for each social media site separately by calling any of the following methods:
+You can also call the render method for each social media button separately by calling any of the following methods:
 + facebook_button
 + twitter_button
 + pinterest_button
