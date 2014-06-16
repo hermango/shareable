@@ -36,7 +36,7 @@ For the simplest way of using shareable, add this helper method to your views:
 
 That's it! You can customize the look and content of each button with more options. Keep reading to find out how.
 
-You can also call the render method for each social media button separately by calling any of the following methods:
+You can also render each social media button separately by calling the following methods:
 + facebook_button
 + twitter_button
 + pinterest_button
@@ -48,7 +48,7 @@ You can also call the render method for each social media button separately by c
 
 #### Static Links
 
-Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option *static_link* to boolean value **true** in your app's local shareable.rb configuration file. You can also pass *static_link* to your render_shareable method like so:
+Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option *static_link* to boolean value **true** in your app's local 'shareable.rb' configuration file. You can also pass *static_link* to your render_shareable method like so:
 
 ```no-highlight
 <%= render_shareable :static_link => true %>
@@ -56,7 +56,7 @@ Shareable generates javascript buttons by default. To render plain html links in
 
 #### Tumblr and StumbleUpon Buttons
 
-By default the display of Tumblr and StumbleUpon buttons is disabled. Enable either button by including the name of the button you want to add (**tumblr** or **stumble_upon**) to configuration option *names* (found in your local shareable.rb configuration file). [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
+By default the display of Tumblr and StumbleUpon buttons is disabled. Enable either button by including the name of the button you want to add (**tumblr** or **stumble_upon**) to the configuration option *names* (found in your local 'shareable.rb' configuration file). [See Configuration](https://github.com/hermango/shareable#configuration) for more information. 
 
 
 ### Advanced Usage
@@ -79,7 +79,7 @@ The helper method for each social link, is the site name joined with an undersco
 ```
 
 To override the default code for a button, place your own template file in the
-app/views/shareable/ directory of your app and prepend your filename with an underscore.
+'app/views/shareable/' directory of your app and prepend your filename with an underscore.
 
 E.g.: facebook_button -> app/views/shareable/_facebook.html.erb
 
@@ -112,7 +112,7 @@ Configuration
 Use shareable's default configuration settings or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
 
 A generator is available for generating the default configuration file into your project's 'config/initializers' directory.
-Run the following generator command, then edit the generated file.
+Run the following generator command, then edit the generated file as preferred.
 
 rails g shareable:config
 
