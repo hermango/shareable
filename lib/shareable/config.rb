@@ -29,7 +29,7 @@ module Shareable
     config.button_only=false # omit initializing javacript code. Only button code is rendered.
     config.static_link=false # renders html links instead of javascript buttons.
     
-    config.turbolinks=true # set to true to enable turbolinks fixes. Requires jquery to work!
+    config.turbolinks=false # set to true to enable turbolinks fixes. Requires jquery to work!
 
     ##############
     #facebook
