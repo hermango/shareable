@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Shareable::VERSION
   s.authors     = ["Hermango"]
   s.homepage    = "http://github.com/hermango/shareable"
-  s.summary     = "Simple and unobtrusive gem for adding social buttons to your Rails app."
+  s.summary     = "Simple and unobtrusive gem for adding social links to your Rails app."
   s.description = "Add social sharing links to a view in your Rails app with one method call. The configuration options for each social link are customizable. Please see read me doc for more details."
   s.require_paths = ['lib']
   s.licenses    = ['MIT']
@@ -17,13 +17,8 @@ Gem::Specification.new do |s|
 
   #s.test_files = Dir["test/**/*"]
 
-  s.add_dependency 'activesupport', ['>= 3.0.0']
-  s.add_dependency 'actionpack', ['>= 3.0.0']
+  s.add_dependency 'activesupport', '>= 3.0.0'
+  s.add_dependency 'actionpack', '>= 3.0.0'
 
-  s.add_development_dependency 'bundler', ['>= 1.0.0']
-  s.add_development_dependency 'tzinfo', ['>= 0']
-  s.add_development_dependency 'rspec', ['>= 0']
-  s.add_development_dependency 'rr', ['>= 0']
-  s.add_development_dependency 'capybara', ['>= 1.0']
-
+  s.add_development_dependency 'bundler', '>= 1.0.0'
 end

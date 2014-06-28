@@ -11,7 +11,25 @@
   <% end %>
   <% unless options[:button_only] %>
     <%= output_once :pinterest do %>
-      <%= render "shareable/partials/scripts/pinterest" %> 
+      <% if options[:turbolinks] %>
+<script>
+  var Pinterest;
+  Pinterest = {
+    load: function() {
+      delete window["PIN_" + ~~((new Date).getTime() / 864e5)];
+      return $.getScript("//assets.pinterest.com/js/pinit.js");
+    }
+  };
+  $(function() {
+    return Pinterest.load();
+  });
+  $(document).on('page:load', function() {
+    return Pinterest.load();
+  });
+</script>
+      <% else %>
+        <%= render "shareable/partials/scripts/pinterest" %> 
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

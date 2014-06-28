@@ -3,9 +3,29 @@
     <%= render "shareable/partials/link", :options => options.merge(:url=>"https://www.facebook.com/sharer.php?u=#{options[:url]}") %>
   <% end %>
 <% else %>
+<div id="fb-root"></div>
   <% unless options[:button_only] %>
     <%= output_once :facebook do %>
-      <%= render "shareable/partials/scripts/facebook", :app_id => options[:app_id] %> 
+      <% if options[:turbolinks] %>
+<script>
+  if (typeof window.facebookLoaded == 'undefined') {
+    var facebookLoaded = false;
+  }
+  function dynamicLoadFacebook(callback) {
+    if (facebookLoaded !== true) {
+      $('head').append("<script><%= raw(render 'shareable/partials/scripts/head/facebook', :app_id=>options[:app_id]) %><\/script>");
+      callback();
+    }
+  }
+  $(function() {
+    return dynamicLoadFacebook(function() {
+      facebookLoaded = true;
+    });
+  });
+</script>
+      <% else %>
+        <%= render "shareable/partials/scripts/facebook", :app_id => options[:app_id] %>
+      <% end %> 
     <% end %>
   <% end %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
