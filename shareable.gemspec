@@ -17,13 +17,8 @@ Gem::Specification.new do |s|
 
   #s.test_files = Dir["test/**/*"]
 
-  s.add_dependency 'activesupport', ['>= 3.0.0']
-  s.add_dependency 'actionpack', ['>= 3.0.0']
+  s.add_dependency 'activesupport', '>= 3.0.0'
+  s.add_dependency 'actionpack', '>= 3.0.0'
 
-  s.add_development_dependency 'bundler', ['>= 1.0.0']
-  s.add_development_dependency 'tzinfo', ['>= 0']
-  s.add_development_dependency 'rspec', ['>= 0']
-  s.add_development_dependency 'rr', ['>= 0']
-  s.add_development_dependency 'capybara', ['>= 1.0']
-
+  s.add_development_dependency 'bundler', '>= 1.0.0'
 end
