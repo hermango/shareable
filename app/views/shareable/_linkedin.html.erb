@@ -4,7 +4,28 @@
   <% end %>
 <% else %>
   <% unless options[:button_only] %>
-    <%= render "shareable/partials/scripts/linkedin" %> 
+    <%= output_once :linkedin do %>
+      <% if options[:turbolinks] %>
+<script type="text/javascript">
+  if (typeof window.linkedinLoaded == 'undefined') {
+    var linkedinLoaded = false;
+  }
+  function dynamicLoadLinkedin(callback) {
+    if (linkedinLoaded !== true) {
+      $('head').append("<script><%= raw(render 'shareable/partials/scripts/head/linkedin') %><\/script>");
+      callback();
+    }
+  }
+  $(function() {
+    return dynamicLoadLinkedin(function() {
+      linkedinLoaded = true;
+    });
+  });
+</script>
+      <% else %>
+        <%= render "shareable/partials/scripts/linkedin" %> 
+      <% end %>
+    <% end %> 
   <% end %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <script type="IN/Share"

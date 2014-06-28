@@ -1,0 +1,12 @@
+var loadLinkedIn; \
+$(function() { \
+  loadLinkedIn(); \
+  return $(document).on('page:load', loadLinkedIn); \
+}); \
+loadLinkedIn = function() { \
+  delete IN; \
+  $.getScript('//platform.linkedin.com/in.js'); \
+  return { \
+    lang: 'en_US' \
+  }; \
+};

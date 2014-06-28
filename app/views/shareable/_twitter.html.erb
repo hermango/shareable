@@ -3,7 +3,7 @@
     <%= render "shareable/partials/link", :options => options.merge(:url=>"https://twitter.com/intent/tweet?url=#{options[:url]}&text=#{options[:text]}&hashtags=#{options[:hashtags]}") %>
   <% end %>
 <% else %>
-  <% if tl = (defined?(Turbolinks) && !(options[:button_only])) %>
+  <% if (options[:turbolinks] && !options[:button_only]) %>
     <%= output_once :twitter do %>
 <script src="//platform.twitter.com/widgets.js"></script>
     <% end %>
@@ -13,7 +13,7 @@
   <%= html_attributes(options.slice(:url, :via, :text, :related, :count, :lang, :counturl, :hashtags, :size, :dnt), :data => true) %>
 >Tweet</a>
   <% end %>
-  <% unless tl %>
+  <% unless (options[:button_only] || options[:turbolinks]) %>
     <%= output_once :twitter do %>
       <%= render "shareable/partials/scripts/twitter" %> 
     <% end %>
