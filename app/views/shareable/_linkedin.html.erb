@@ -1,6 +1,6 @@
 <% if options[:static_link] %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
-    <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.linkedin.com/shareArticle?url=#{options[:url]}&title=#{options[:title]}&summary=#{options[:description]}") %>
+    <%= render "shareable/partials/link", :options => options.merge(:url=>"https://www.linkedin.com/shareArticle?url=#{options[:url]}&title=#{options[:title]}&summary=#{options[:description]}") %>
   <% end %>
 <% else %>
   <% if !options[:button_only] && !options[:turbolinks] %>
