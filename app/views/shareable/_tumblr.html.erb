@@ -4,8 +4,8 @@
   <% end %>
 <% else %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
-<a href="http://www.tumblr.com/share/link?url=<%= options[:url] %>&name=<%= options[:title] %>&description=<%= options[:description] %>" title="Share on Tumblr" 
-style="display:inline-block; text-indent:-9999px; overflow:hidden; width:<%= options[:width] %>px; height:20px; background:url('http://platform.tumblr.com/v1/<%= options[:background] %>') top left no-repeat transparent; vertical-align:top;" class="tumblr-button">Share on Tumblr</a>
+<a href="https://www.tumblr.com/share/link?url=<%= options[:url] %>&name=<%= options[:title] %>&description=<%= options[:description] %>" title="Share on Tumblr" 
+style="display:inline-block; text-indent:-9999px; overflow:hidden; width:<%= options[:width] %>px; height:20px; background:url('https://platform.tumblr.com/v1/<%= options[:background] %>') top left no-repeat transparent; vertical-align:top;" class="tumblr-button">Share on Tumblr</a>
   <% end %>
   <% unless options[:button_only] %>
     <%= output_once :tumblr do %>

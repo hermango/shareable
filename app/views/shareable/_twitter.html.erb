@@ -9,7 +9,7 @@
     <% end %>
   <% end %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
-<a href="http://twitter.com/share" class="twitter-share-button"
+<a href="https://twitter.com/share" class="twitter-share-button"
   <%= html_attributes(options.slice(:url, :via, :text, :related, :count, :lang, :counturl, :hashtags, :size, :dnt), :data => true) %>
 >Tweet</a>
   <% end %>
