@@ -6,7 +6,7 @@
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <a data-pin-config="<%= options[:pin_config] %>"
    href="//pinterest.com/pin/create/button/?url=<%= options[:url] %><%= raw('&media=' + options[:media]) unless options[:media].blank? %><%= raw('&description=' + options[:description]) unless options[:description].blank? %>"
-   data-pin-do="<%= options[:pin_do] %>" >
+   data-pin-do="<%= options[:pin_do] %>" data-pin-shape="<%= options[:pin_shape] %>" data-pin-height="<%= options[:pin_height] %>" data-pin-color="<%= options[:pin_color] %>" >
   <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" title="<%= options[:title]%>" alt="<%= options[:alt] %>" /></a>
   <% end %>
   <% unless options[:button_only] %>

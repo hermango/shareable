@@ -2,6 +2,7 @@
   <% if options[:static_link] %>
   <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.reddit.com/submit?url=#{options[:url]}&title=#{options[:title]}") %>
   <% else %>
+    <% if !options[:turbolinks] %>
 <script type="text/javascript">
     reddit_url='<%= options[:url] %>';
     reddit_target='<%= options[:target]%>';
@@ -10,10 +11,22 @@
     reddit_bordercolor='<%= options[:bordercolor] %>';
     reddit_newwindow='<%= options[:newwindow] %>';
 </script>
-    <% unless options[:button_only] %>
+      <% unless options[:button_only] %>
 <script type="text/javascript"
-src="<%= raw((options[:btnsrc].blank? ? ('//www.reddit.com/static/button/button' + options[:type] + '.js?i=' + options[:points]) : options[:btnsrc]) + '&styled=' + options[:styled]) %>">
+src="<%= raw(options[:btnsrc].blank? ? ('//www.reddit.com/static/button/button' + options[:type] + '.js') : ('//www.reddit.com/buttonlite.js?i=' + options[:points] + '&styled=' + options[:styled])) %>">
 </script>
+      <% end %>
+    <% else #turbolinks enabled use iframe hack %>
+    <%# TODO: move to reddit tag class %>
+      <% unless options[:type].blank? || options[:button_only] %>
+        <% case options[:type] %>
+         <% when '1' then width, height = '120', '22' %>
+         <% when '2' then width, height = '51', '69' %>
+         <% when '3' then width, height = '69', '52' %>
+         <% else width, height = '0', '0' %>
+        <% end %>
+<iframe src="//www.reddit.com/static/button/button<%= options[:type] %>.html?width=<%= width %>&url=<%= url_encode(options[:url]) %>&target=<%= options[:target]%>&title=<%= url_encode(options[:title]) %>&bgcolor=<%= options[:color] %>&bordercolor=<%= options[:bordercolor] %>&newwindow=<%= options[:newwindow] %>" height="<%= height %>" width="<%= width %>" scrolling="no" frameborder="0"></iframe>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

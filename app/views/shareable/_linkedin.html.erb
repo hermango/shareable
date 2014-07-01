@@ -3,33 +3,39 @@
     <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.linkedin.com/shareArticle?url=#{options[:url]}&title=#{options[:title]}&summary=#{options[:description]}") %>
   <% end %>
 <% else %>
-  <% unless options[:button_only] %>
+  <% if !options[:button_only] && !options[:turbolinks] %>
     <%= output_once :linkedin do %>
-      <% if options[:turbolinks] %>
-<script type="text/javascript">
-  if (typeof window.linkedinLoaded == 'undefined') {
-    var linkedinLoaded = false;
-  }
-  function dynamicLoadLinkedin(callback) {
-    if (linkedinLoaded !== true) {
-      $('head').append("<script><%= raw(render 'shareable/partials/scripts/head/linkedin') %><\/script>");
-      callback();
-    }
-  }
-  $(function() {
-    return dynamicLoadLinkedin(function() {
-      linkedinLoaded = true;
-    });
-  });
-</script>
-      <% else %>
-        <%= render "shareable/partials/scripts/linkedin" %> 
-      <% end %>
+      <%= render "shareable/partials/scripts/linkedin" %>
     <% end %> 
   <% end %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
 <script type="IN/Share"
   <%= html_attributes(options.slice(:url, :counter, :onerror, :onsuccess, :showzero), :data => true) %>
 ></script>
+  <% end %>
+  <% if options[:turbolinks] && !options[:button_only] %>
+    <%= output_once :linkedin do %>
+<script type="text/javascript">
+  if (typeof window.linkedinLoaded == 'undefined') {
+    var linkedinLoaded = false;
+  }
+  var __loadLinkedin = function() {
+    if (linkedinLoaded !== true) {
+      $('head').append("<script><%= raw(render 'shareable/partials/scripts/head/linkedin') %><\/script>");
+    }
+  };
+  if (typeof $.turbo == 'undefined') {
+    $(function() {
+      return __loadLinkedin();
+    });
+  }
+  //for jquery.turbolinks
+  else {
+    if (linkedinLoaded !== true) {
+    __loadLinkedin();  
+    }
+  }
+</script>
+    <% end %>
   <% end %>
 <% end %>
