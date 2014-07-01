@@ -98,7 +98,7 @@ For horizontally aligned buttons, try this CSS:
 nav.share {display:inline-block;} /* shareable's nav tag */
 nav.share div {float:left; overflow:hidden;}
 nav.share iframe {max-height:20px; border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
-#___plusone_0 {max-width:70px; font-size: default; !important}
+#___plusone_0 {max-width:70px; font-size: default !important;}
 .twitter-share-button, .twitter-count-horizontal {max-width:80px;}
 .fb_iframe_widget span { vertical-align: top; }
 .fb_edge_widget_with_comment { vertical-align: top;}
