@@ -120,7 +120,7 @@ Run the following generator command, then edit the generated file as preferred.
 
 rails g shareable:config
 
-Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Three configuration options are exceptions to this rule. The following three options expect boolean values only (strings are not accepted):
+Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the helper method) expects an array of strings. The other three configuration options expect boolean values only and are the following:
  * static_link
  * button_only
  * turbolinks
