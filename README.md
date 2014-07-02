@@ -85,7 +85,7 @@ To override the default code for a button, place your own template file in the
 E.g.: facebook_button -> app/views/shareable/_facebook.html.erb
 
 #### Facebook compatibility with Internet Explorer
-Add an XML namespace fb='http://ogp.me/ns/fb#' to the <html> tag of your view. Eg: 
+Add an XML namespace fb='http://ogp.me/ns/fb#' to the html tag of your view. Eg: 
 ```no-highlight
 <html xmlns:fb="http://ogp.me/ns/fb#">
 ```
