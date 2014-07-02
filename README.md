@@ -1,7 +1,7 @@
 Shareable
 =========
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" title="Shareable makes social media buttons." /><br/>
-A simple gem for adding social buttons to your Rails app. Shareable runs with zero configuration and offers a wide range of customization features. Rendering javascript buttons and static links is easy. The available social media sites include:
+A gem for adding social buttons to your Rails app. Shareable runs with zero configuration and offers a wide range of customization features. Rendering javascript buttons and static links is easy. One method call can generate all the sharing buttons you want. The available social media sites include:
   - Facebook
   - Twitter
   - Pinterest
@@ -72,7 +72,7 @@ To render only certain buttons:
 ```
 
 Alternatively, omit the render_shareable method entirely and instead add each social link individually.
-The helper method for each social link, is the site name joined with an underscore to the word 'button'. E.g.:
+The helper method for each social link is the site name joined with an underscore to the word 'button'. E.g.:
 
 ```no-highlight
 <%= twitter_button %>
@@ -113,17 +113,17 @@ If you use the default configuration options of Shareable and styling above, the
 
 Configuration
 ------------
-Use shareable's default configuration settings or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
+Use shareable's [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
 
 A generator is available for generating the default configuration file into your project's 'config/initializers' directory.
 Run the following generator command, then edit the generated file as preferred.
 
 rails g shareable:config
 
-Shareable expects string values for nearly all configuration options. Nil, numeric or any other non-string values will cause errors! There are three configuration options that expect boolean values (strings are not accepted).
-* button_only
-* static_link
-* turbolinks
+Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Three configuration options are exceptions to this rule. The following three options expect boolean values only (strings are not accepted):
+ * static_link
+ * button_only
+ * turbolinks
 
 ---
 
