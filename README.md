@@ -48,7 +48,7 @@ You can also render each social media button separately by calling the following
 
 #### Static Links
 
-Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option *static_link* to boolean value **true** in your app's local 'shareable.rb' configuration file. You can also pass *static_link* to your render_shareable method like so:
+Shareable generates javascript buttons by default. To render plain html links instead, set the configuration option *static_link* to boolean value **true** in your app's local 'shareable.rb' configuration file. You can also pass *static_link* to the render_shareable method like so:
 
 ```no-highlight
 <%= render_shareable :static_link => true %>
@@ -115,5 +115,12 @@ A generator is available for generating the default configuration file into your
 Run the following generator command, then edit the generated file as preferred.
 
 rails g shareable:config
+
+Shareable expects string values for nearly all configuration options. Nil, numeric or any other non-string values will cause errors! There are three configuration options that expect boolean values (strings are not accepted).
+* button_only
+* static_link
+* turbolinks
+
+---
 
 This project was inspired by Akira Matsuda's Kaminari project and uses the MIT-LICENSE. Suggestions, bug reports, criticism and all contributions welcome.
