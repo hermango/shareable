@@ -16,14 +16,14 @@
 src="<%= raw(options[:btnsrc].blank? ? ('//www.reddit.com/static/button/button' + options[:type] + '.js') : ('//www.reddit.com/buttonlite.js?i=' + options[:points] + '&styled=' + options[:styled])) %>">
 </script>
       <% end %>
-    <% else #turbolinks enabled use iframe hack %>
+    <% else #if turbolinks is enabled then use this iframe hack %>
     <%# TODO: move to reddit tag class %>
       <% unless options[:type].blank? || options[:button_only] %>
-        <% case options[:type] %>
-         <% when '1' then width, height = '120', '22' %>
-         <% when '2' then width, height = '51', '69' %>
-         <% when '3' then width, height = '69', '52' %>
-         <% else width, height = '0', '0' %>
+        <% width, height = case options[:type] %>
+         <% when '1' then ['120', '22'] %>
+         <% when '2' then ['51', '69'] %>
+         <% when '3' then ['69', '52'] %>
+         <% else ['0', '0'] %>
         <% end %>
 <iframe src="//www.reddit.com/static/button/button<%= options[:type] %>.html?width=<%= width %>&url=<%= url_encode(options[:url]) %>&target=<%= options[:target]%>&title=<%= url_encode(options[:title]) %>&bgcolor=<%= options[:color] %>&bordercolor=<%= options[:bordercolor] %>&newwindow=<%= options[:newwindow] %>" height="<%= height %>" width="<%= width %>" scrolling="no" frameborder="0"></iframe>
       <% end %>

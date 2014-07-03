@@ -1,16 +1,17 @@
 Shareable.configure do |config|
 
-  # valid names are:
-  # twitter facebook pinterest reddit google_plus linkedin tumblr stumble_upon
+  ## configuration "names" determines which social buttons are rendered. The order the buttons are
+  ## displayed in is decided by the same order as listed here.
+  ## Valid names are: twitter facebook linkedin pinterest google_plus reddit tumblr stumble_upon
   #config.names = %w[ twitter facebook linkedin pinterest google_plus reddit tumblr stumble_upon ]
 
-  #config.button_only=false # omit initializing javacript code. Only button code is rendered.
   #config.static_link=false # renders html links instead of javascript buttons.
+  #config.button_only=false # omit initializing javacript code. Only button code is rendered.
   #config.turbolinks=false # set to true to enable turbolinks fixes. Requires jquery to work!
 
-  ##############
-  #facebook
-  ##############
+  ###############
+  ##facebook
+  ###############
   #config.app_id='' # required if using facebook button!
   #config.send= 'false'
   #config.layout='' # 'standard', 'button_count', 'button' or 'box_count'. '' defaults to 'standard'.
@@ -22,9 +23,9 @@ Shareable.configure do |config|
   #config.share='' # 'true' or 'false'. '' defaults to 'false'.
   #config.kid_directed_site='' # 'true' or 'false'. '' defaults to 'false'. Facebook assumes your site is not kid friendly.
 
-  ##############
-  #google_plus
-  ##############
+  ###############
+  ##google_plus
+  ###############
   #config.annotation='bubble' # 'none', 'bubble' or 'inline'. '' defaults to 'bubble'.
   #config.align='' # 'left' or 'right'. '' defaults to 'left'.
   #config.expand_to='' # comma separated list of 'top', 'right', 'bottom' and 'left'.
@@ -33,17 +34,17 @@ Shareable.configure do |config|
   #config.onendinteraction=''
   #config.recommendations='false' # 'true' or 'false'. '' defaults to 'true'.
 
-  ##############
-  #linkedin
-  ##############
+  ###############
+  ##linkedin
+  ###############
   #config.counter = 'right' # 'right', 'top' or ''. '' hides counter.
   #config.onsuccess = '' # name of a javascript function to fire if url is successfully shared.
   #config.onerror = ''
   #config.showzero = 'true' # 'true' or 'false'.
 
-  ##############
-  #pinterest
-  ##############
+  ###############
+  ##pinterest
+  ###############
   #config.pin_config = 'beside' # 'beside', 'above' or 'none'.
   #config.pin_do = 'buttonPin' # 'buttonPin' or 'buttonBookmark'.
   #config.pin_shape='' # 'round' or ''.
@@ -52,21 +53,21 @@ Shareable.configure do |config|
   #config.alt='' # alternate text for image tag.
   #config.media=''
 
-  ##############
-  #reddit
-  ##############
+  ###############
+  ##reddit
+  ###############
   #config.target='' # subreddit name, eg: 'rails'
   #config.color=''
   #config.bordercolor=''
-  #config.styled='off' # 'off' or blank (''). Only used if btnsrc is not blank.
+  #config.styled='off' # 'off' or ''. Only used when btnsrc is not blank.
   #config.newwindow='1'
   #config.btnsrc='' # alternate reddit button url, eg: 'http://www.reddit.com/buttonlite.js?i=1'
-  #config.type= '1' # button type, eg: '1' to '3'.
-  #config.points = '1' # points style, eg: '0' to '5'. Only used if btnsrc is not blank.
+  #config.type= '1' # '1' to '3'.
+  #config.points = '1' # '0' to '5'. Only used when btnsrc is not blank.
 
-  ##############
-  #twitter
-  ##############
+  ###############
+  ##twitter
+  ###############
   #config.via='' # screen name of the user to attribute the tweet to.
   #config.text='' # default tweet text. If blank, defaults to value of config.title.
   #config.related='' # related accounts
@@ -76,19 +77,19 @@ Shareable.configure do |config|
   #config.hashtags='' # comma separated hashtags appended to tweet text
   #config.dnt='' # 'true' or 'false'. 'true' tailors content and suggestions for twitter users.
 
-  ##############
-  #stumble_upon
-  ##############
+  ###############
+  ##stumble_upon
+  ###############
   #config.badge_layout='1' # '1' to '6'.
 
-  ##############
-  #tumblr
-  ##############
+  ###############
+  ##tumblr
+  ###############
   #config.background='1' # '1' to '4'. Or '1T', '2T', '3T' or '4T'.
 
-  ##############
-  #shared configuration options
-  ##############
+  ###############
+  ##shared configuration options
+  ###############
   #config.width='80' # used by facebook, google_plus and tumblr.
   #config.title= '' # used by linkedin, pinterest, reddit, stumbleupon and tumblr.
   #config.description='' # used by linkedin and tumblr.

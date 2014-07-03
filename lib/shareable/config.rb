@@ -26,8 +26,8 @@ module Shareable
   configure do |config|
     config.names = %w[ twitter facebook linkedin pinterest google_plus reddit ]
 
-    config.button_only=false # omit initializing javacript code. Only button code is rendered.
     config.static_link=false # renders html links instead of javascript buttons.
+    config.button_only=false # omit initializing javacript code. Only button code is rendered.
     config.turbolinks=false # set to true to enable turbolinks fixes. Requires jquery to work!
 
     ##############
@@ -80,11 +80,11 @@ module Shareable
     config.target='' # subreddit name, eg: 'rails'
     config.color=''
     config.bordercolor=''
-    config.styled='off' # 'off' or blank (''). Only used if btnsrc is not blank.
+    config.styled='off' # 'off' or ''. Only used when btnsrc is not blank.
     config.newwindow='1'
     config.btnsrc='' # alternate reddit button url, eg: 'http://www.reddit.com/buttonlite.js?i=1'
-    config.type= '1' # button type, eg: '1' to '3'.
-    config.points = '1' # points style, eg: '0' to '5'. Only used if btnsrc is not blank.
+    config.type= '1' # '1' to '3'.
+    config.points = '1' # '0' to '5'. Only used when btnsrc is not blank.
 
     ##############
     #twitter
