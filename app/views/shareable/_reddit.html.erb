@@ -1,6 +1,6 @@
 <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
   <% if options[:static_link] %>
-  <%= render "shareable/partials/link", :options => options.merge(:url=>"https://www.reddit.com/submit?url=#{options[:url]}&title=#{options[:title]}") %>
+  <%= render "shareable/partials/link", :options => options.merge(:url=>"http://www.reddit.com/submit?url=#{options[:url]}&title=#{options[:title]}") %>
   <% else %>
     <% if !options[:turbolinks] %>
 <script type="text/javascript">
