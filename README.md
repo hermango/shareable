@@ -112,7 +112,15 @@ If you use the default configuration options of Shareable and styling above, the
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
-Shareable is compatiable with Turbolinks but the javascript library jQuery is required in order for Shareable's solution to work. If your app uses [jQuery](https://github.com/rails/jquery-rails), then you can enable Shareable Turbolinks by setting the configuration option *turbolinks* to boolean value true in your app's 'shareable.rb' configuration file (see Configuration section below for more details). 
+Shareable is compatiable with Turbolinks but the javascript library [jQuery](https://github.com/rails/jquery-rails) is required in order for Shareable's solution to work. To enable Turbolinks compatibility, set the configuration option *turbolinks* in your app's 'shareable.rb' configuration file (see [Configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration)) to boolean value true. Turbolinks compatiability is turned off by default. You can also pass *turbolinks* as a hash value to the render_shareable method like this:
+
+```
+<%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
+```
+If your app doesn't use jQuery or you don't want to use Sharable's solution to Turbolinks, here are some other options:
+
+ 1. Disable Turbolinks. Remove the line "//= require turbolinks" from your app's application.js file in the assets directory. Or use the data marker *data-no-turbolink* in your links and html elements [(more information on how here)](https://github.com/rails/turbolinks#opting-out-of-turbolinks).
+ 2. Roll your own fix. Set Shareable's configuration option *button_only* to boolean true. This will output button tags without the initializing javascript and you can add your own javascript solution. To see approaches check out [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/). 
 
 Configuration
 ------------
