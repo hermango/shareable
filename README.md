@@ -111,6 +111,9 @@ nav.share iframe {max-height:20px; border:0; margin-top:0; padding-top:0;} /* if
 If you use the default configuration options of Shareable and styling above, the output should appear as:
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
+###Turbolinks
+Shareable is compatiable with Turbolinks but the javascript library jQuery is required in order for Shareable's solution to work. If your app uses [jQuery](https://github.com/rails/jquery-rails), then you can enable Shareable Turbolinks by setting the configuration option *turbolinks* to boolean value true in your app's 'shareable.rb' configuration file (see Configuration section below for more details). 
+
 Configuration
 ------------
 Use shareable's [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
