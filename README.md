@@ -1,17 +1,17 @@
 Shareable
 =========
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" title="Shareable makes social media buttons." /><br/>
-A gem for adding social buttons to your Rails app. Shareable runs with zero configuration and offers a wide range of customization features. Rendering javascript buttons and static links is easy. One method call can generate all the sharing buttons you want. The available social media sites include:
+A gem for adding social buttons to your Rails app. Shareable runs with zero configuration<sup>*</sup> and offers a wide range of customization features. Rendering javascript buttons and static links is easy. One method call can generate all the sharing buttons you want. The available social media sites include:
   - Facebook
   - Twitter
   - Pinterest
   - Reddit
   - Linkedin
   - Google Plus
-  - Tumblr<sup>*</sup>
-  - StumbleUpon<sup>*</sup>
+  - Tumblr<sup>**</sup>
+  - StumbleUpon<sup>**</sup>
 
-<sub>*Tumblr and StumbleUpon buttons aren't rendered by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
+<sub>* If your app uses Turbolinks, Shareable's configuration options *turbolinks* should be set to true (see [Turbolinks section](https://github.com/hermango/shareable#turbolinks)).</sub><sub> **Tumblr and StumbleUpon buttons aren't rendered by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
 
 The shareable gem supports Rails 3 and 4. 
 
@@ -112,7 +112,7 @@ If you use the default configuration options of Shareable and styling above, the
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
-Shareable is compatiable with Turbolinks but the javascript library [jQuery](https://github.com/rails/jquery-rails) is required in order for Shareable's solution to work. To enable Turbolinks compatibility, set the configuration option *turbolinks* in your app's 'shareable.rb' configuration file (see [Configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration)) to boolean value true. Turbolinks compatiability is turned off by default. You can also pass *turbolinks* as a hash value to the render_shareable method like this:
+Shareable works with Turbolinks but the javascript library [jQuery](https://github.com/rails/jquery-rails) is required in order for Shareable's solution to work. To enable Turbolinks support, set the configuration option *turbolinks* in your app's 'shareable.rb' configuration file (see [Configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration)) to boolean value true. Turbolinks compatiability is turned off by default. You can also pass *turbolinks* as a hash value to the render_shareable method like this:
 
 ```
 <%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
