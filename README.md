@@ -98,6 +98,11 @@ Each outputted button has two self-referencing variables that are accessible to 
 + options[:button_name] - facebook, twitter, pinterest, linkedin, google_plus, reddit, tumblr, stumble_upon 
 + options[:button_caption] - Facebook, Twitter, Pinterest, Linkedin, Google+, Reddit, Tumblr, StumbleUpon
 
+Both variable can be overridden when passed to the render_shareable method as hash values. E.g.:
+```
+<%= render_shareable :twitter => {:button_caption => 'Tweet this!'} %>
+```
+
 #### Facebook compatibility with Internet Explorer
 Add an XML namespace fb='http://ogp.me/ns/fb#' to the html tag of your view. Eg: 
 ```no-highlight
