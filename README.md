@@ -139,7 +139,7 @@ Shareable is compatible with Turbolinks but requires the javascript library [jQu
 If your app doesn't use jQuery or you don't want to use the provided solution but still want to use this gem, here are some other options:
 
  1. Use [static links](https://github.com/hermango/shareable#static-links) instead.
- 2. Roll your own solution: Set Shareable's configuration option *button_only* to boolean value **true**. This will output button tags without javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
+ 2. Roll your own solution: Set configuration option *button_only* to boolean value **true**. This will output button tags without javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
  3. Disable Turbolinks. To disable Turbolinks from your app: Remove the line "//= require turbolinks" from your app's application.js file in the assets directory. To disable Turbolinks in some pages: use the data marker *data-no-turbolink* in your links and html elements [(instructions here)](https://github.com/rails/turbolinks#opting-out-of-turbolinks).
 
 Configuration
