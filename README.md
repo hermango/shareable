@@ -11,7 +11,7 @@ A gem for adding social buttons to your Rails app. Shareable runs with zero conf
   - Tumblr<sup>**</sup>
   - StumbleUpon<sup>**</sup>
 
-<sub>* If your app uses Turbolinks, Shareable's configuration options *turbolinks* should be set to true (see [Turbolinks section](https://github.com/hermango/shareable#turbolinks)).</sub><sub> **Tumblr and StumbleUpon buttons aren't rendered by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
+<sub>* If you're using Turbolinks, set Shareable's configuration option *turbolinks* to true (see [section on Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't outputted by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
 
 The shareable gem supports Rails 3 and 4. 
 
@@ -112,29 +112,30 @@ If you use the default configuration options of Shareable and styling above, the
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
-Shareable works with Turbolinks but the javascript library [jQuery](https://github.com/rails/jquery-rails) is required in order for Shareable's solution to work. To enable Turbolinks support, set the configuration option *turbolinks* in your app's 'shareable.rb' configuration file (see [Configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration)) to boolean value true. Turbolinks compatiability is turned off by default. You can also pass *turbolinks* as a hash value to the render_shareable method like this:
+Shareable is compatible with Turbolinks but requires the javascript library [jQuery](https://github.com/rails/jquery-rails). Turbolinks support is turned off by default. To enable Turbolinks support, first make sure your app uses jQuery then set configuration option *turbolinks* in your app's 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value true. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
 
 ```
 <%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
 ```
-If your app doesn't use jQuery or you don't want to use Sharable's solution to Turbolinks, here are some other options:
+If your app doesn't use jQuery or you don't want to use Sharable's solution to Turbolinks but still want to use Shareable, here are some other options:
 
- 1. Disable Turbolinks. Remove the line "//= require turbolinks" from your app's application.js file in the assets directory. Or use the data marker *data-no-turbolink* in your links and html elements [(more information on how here)](https://github.com/rails/turbolinks#opting-out-of-turbolinks).
- 2. Roll your own fix. Set Shareable's configuration option *button_only* to boolean true. This will output button tags without the initializing javascript and you can add your own javascript solution. To see approaches check out [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/). 
+ 1. Use [Shareable static links](https://github.com/hermango/shareable#static-links) instead.
+ 2. Roll your own solution: Set Shareable's configuration option *button_only* to boolean value true. This will output button tags without any initializing javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
+ 3. Disable Turbolinks. To disable Turbolinks from your app: Remove the line "//= require turbolinks" from your app's application.js file in the assets directory. To disable Turbolinks in some pages: use the data marker *data-no-turbolink* in your links and html elements [(instructions here)](https://github.com/rails/turbolinks#opting-out-of-turbolinks).
 
 Configuration
 ------------
-Use shareable's [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or add your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
+This gem comes pre-configured and ready to use. You can use the [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or customize Shareable by adding and editing your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
 
 A generator is available for generating the default configuration file into your project's 'config/initializers' directory.
-Run the following generator command, then edit the generated file as preferred.
+Run the following command, then edit the generated file as preferred.
 
 rails g shareable:config
 
-Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values and are the following:
- * static_link
- * button_only
- * turbolinks
+Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
+ * static_link - false by default. See [Static Links](https://github.com/hermango/shareable#static-links).
+ * button_only - false by default. If set to true, initializing javascript for buttons is omitted.
+ * turbolinks - false by default. When set to true, social buttons will work with Turbolinks. Relies on jQuery.
 
 ---
 
