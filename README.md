@@ -146,7 +146,7 @@ Run the following command, then edit the generated file as preferred.
 
 rails g shareable:config
 
-Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
+String values are expected for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
  * static_link - **false** by default. See [Static Links](https://github.com/hermango/shareable#static-links).
  * button_only - **false** by default. If set to **true**, javascript code for buttons is omitted.
  * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery.
