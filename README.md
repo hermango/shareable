@@ -131,7 +131,7 @@ Shareable is compatible with Turbolinks but requires the javascript library [jQu
 ```
 <%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
 ```
-If your app doesn't use jQuery or you don't want to use Sharable's solution to Turbolinks but still want to use Shareable, here are some other options:
+If your app doesn't use jQuery or you don't want to use the provided solution but still want to use this gem, here are some other options:
 
  1. Use [Shareable static links](https://github.com/hermango/shareable#static-links) instead.
  2. Roll your own solution: Set Shareable's configuration option *button_only* to boolean value **true**. This will output button tags without javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
