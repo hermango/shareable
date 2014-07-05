@@ -13,7 +13,7 @@ A gem for adding social buttons to your Rails app. Shareable runs with zero conf
 
 The shareable gem supports Rails 3 and 4.
 
-<sub>* If you're using Turbolinks, set Shareable's configuration option *turbolinks* to **true** (see [section on Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't outputted by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
+<sub>* If you're using Turbolinks, set configuration option *turbolinks* to **true** (see [section on Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't outputted by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
 
 
 Install
@@ -122,7 +122,7 @@ nav.share iframe {max-height:20px; border:0; margin-top:0; padding-top:0;} /* if
 *+html .fb-like{display:inline}/* ie7 inline block fix*/
 ```
 
-If you use the default configuration options of Shareable and styling above, the output should appear as:
+If you use the default configuration options and styling above, the output should appear as:
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
@@ -146,7 +146,7 @@ Run the following command, then edit the generated file as preferred.
 
 rails g shareable:config
 
-String values are expected for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
+String values are expected for nearly all of the configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
  * static_link - **false** by default. See [Static Links](https://github.com/hermango/shareable#static-links).
  * button_only - **false** by default. If set to **true**, javascript code for buttons is omitted.
  * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery.
