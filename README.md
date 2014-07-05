@@ -125,7 +125,7 @@ If your app doesn't use jQuery or you don't want to use Sharable's solution to T
 
 Configuration
 ------------
-This gem comes pre-configured and ready to use. You can use the [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or customize Shareable by adding and editing your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
+This gem comes pre-configured and ready to use. You can use the [default configuration settings](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb) or customize your buttons by adding and editing your own initializer named 'shareable.rb' to your app's 'config/initializers' directory.
 
 A generator is available for generating the default configuration file into your project's 'config/initializers' directory.
 Run the following command, then edit the generated file as preferred.
