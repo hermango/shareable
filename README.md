@@ -36,7 +36,7 @@ For the simplest way of using shareable, add this helper method to your views:
 <%= render_shareable %>
 ```
 
-That's it! You can customize the look and content of each button with more options. Keep reading to find out how.
+That's it! You can change the look and content of each button with more options. Keep reading to find out how.
 
 You can also render each social media button separately by calling the following methods:
 + facebook_button
@@ -80,10 +80,23 @@ The helper method for each social link is the site name joined with an underscor
 <%= reddit_button :title=> 'Alternate Title' %>
 ```
 
-To override the default code for a button, place your own template file in the
-'app/views/shareable/' directory of your app and prepend your filename with an underscore.
+#### Customizing Buttons 
+Overriding Shareable is possible and entirely optional. Some knowledge of [Rails layouts and rendering](http://guides.rubyonrails.org/layouts_and_rendering.html) is required. Read on to learn how to personalize your buttons.
 
-E.g.: facebook_button -> app/views/shareable/_facebook.html.erb
+Buttons and static links are wrapped in overwritable files called partials. The look and DOM structure of your buttons can be changed by creating your own files with matching filenames and placed in your local 'views' directory. As long as the yield method is called in the following two partials, you can make whatever changes you want:
++ [_parent_wrapper.html.erb](https://github.com/hermango/shareable/blob/master/app/views/shareable/partials/_parent_wrapper.html.erb) goes in the 'app/views/shareable/partials/' directory. This partial is rendered once and encloses all of the buttons.
++ [_button_wrapper.html.erb](https://github.com/hermango/shareable/blob/master/app/views/shareable/partials/_button_wrapper.html.erb) goes in the 'app/views/shareable/partials/' directory. This partial is rendered inside _parent_wrapper.html.erb and is outputted for each button.
+
+The partial used for static links is named _link.html.erb. The important variable you want to include is called *options[:url]*.
++ [_link.html.erb](https://github.com/hermango/shareable/blob/master/app/views/shareable/partials/_link.html.erb) goes in the 'app/views/shareable/partials/' directory.
+
+To override the actual code for a button, place your own template file in the
+'app/views/shareable/' directory of your app and prepend that filename with an underscore and the name of the social media site. For example, to overwrite the Facebook button: Create a file called _facebook.html.erb that goes in the 'app/views/shareable/' directory.
+
+##### button_name and button_caption
+Each outputted button has two self-referencing variables that are accessible to you. These variables are named *button_name* and *button_caption* and are contained in the *options* hash. Depending on the button instance these variables are accessed within, the possible string values are:
++ options[:button_name] - facebook, twitter, pinterest, linkedin, google_plus, reddit, tumblr, stumble_upon 
++ options[:button_caption] - Facebook, Twitter, Pinterest, Linkedin, Google+, Reddit, Tumblr, StumbleUpon
 
 #### Facebook compatibility with Internet Explorer
 Add an XML namespace fb='http://ogp.me/ns/fb#' to the html tag of your view. Eg: 
@@ -121,7 +134,7 @@ Shareable is compatible with Turbolinks but requires the javascript library [jQu
 If your app doesn't use jQuery or you don't want to use Sharable's solution to Turbolinks but still want to use Shareable, here are some other options:
 
  1. Use [Shareable static links](https://github.com/hermango/shareable#static-links) instead.
- 2. Roll your own solution: Set Shareable's configuration option *button_only* to boolean value **true**. This will output button tags without any initializing javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
+ 2. Roll your own solution: Set Shareable's configuration option *button_only* to boolean value **true**. This will output button tags without javascript. Then you can add your own javascript solution. See [Nick Reed's tutorial](http://reed.github.io/turbolinks-compatibility/) to check out some approaches.
  3. Disable Turbolinks. To disable Turbolinks from your app: Remove the line "//= require turbolinks" from your app's application.js file in the assets directory. To disable Turbolinks in some pages: use the data marker *data-no-turbolink* in your links and html elements [(instructions here)](https://github.com/rails/turbolinks#opting-out-of-turbolinks).
 
 Configuration
@@ -135,7 +148,7 @@ rails g shareable:config
 
 Shareable expects string values for nearly all configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
  * static_link - **false** by default. See [Static Links](https://github.com/hermango/shareable#static-links).
- * button_only - **false** by default. If set to **true**, initializing javascript code for buttons is omitted.
+ * button_only - **false** by default. If set to **true**, javascript code for buttons is omitted.
  * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery.
 
 ---
