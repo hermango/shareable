@@ -81,7 +81,7 @@ The helper method for each social link is the site name joined with an underscor
 ```
 
 #### Customizing Buttons 
-Overriding Shareable is possible and entirely optional. Some knowledge of [Rails layouts and rendering](http://guides.rubyonrails.org/layouts_and_rendering.html) is required. Read on to learn how to personalize your buttons.
+Overriding Shareable is possible and entirely optional. Some knowledge of [Rails layouts and rendering](http://guides.rubyonrails.org/layouts_and_rendering.html) is required. Read on to learn how you can personalize your buttons.
 
 Buttons and static links are wrapped in overwritable files called partials. The look and DOM structure of your buttons can be changed by creating your own files with matching filenames and placed in your local 'views' directory. As long as the yield method is called in the following two partials, you can make whatever changes you want:
 + [_parent_wrapper.html.erb](https://github.com/hermango/shareable/blob/master/app/views/shareable/partials/_parent_wrapper.html.erb) goes in the 'app/views/shareable/partials/' directory. This partial is rendered once and encloses all of the buttons.
