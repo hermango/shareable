@@ -11,7 +11,7 @@ A gem for adding social buttons to your Rails app. Shareable runs with zero conf
   - Tumblr<sup>**</sup>
   - StumbleUpon<sup>**</sup>
 
-The shareable gem supports Rails 3 and 4.
+The Shareable gem supports Rails 3 and 4.
 
 <sub>* If you're using Turbolinks, set configuration option *turbolinks* to **true** (see [section on Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't outputted by default. Set a [configuration](https://github.com/hermango/shareable#configuration) option to show these buttons.</sub>
 
@@ -30,7 +30,7 @@ Usage
 ------
 ### Views
 
-For the simplest way of using shareable, add this helper method to your views:
+For the simplest way of using Shareable, add this helper method to your views:
 
 ```no-highlight
 <%= render_shareable %>
