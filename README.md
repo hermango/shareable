@@ -94,7 +94,7 @@ Buttons and static links are wrapped in overwritable files called partials. The 
 The partial used for static links is named _link.html.erb. The important variable you want to include is called *options[:url]*.
 + [_link.html.erb](https://github.com/hermango/shareable/blob/master/app/views/shareable/partials/_link.html.erb) goes in the 'app/views/shareable/partials/' directory.
 
-##### Change Social Buttons
+##### Change Javascript Buttons
 
 To override the code for a javascript button, place your own template file in the
 'app/views/shareable/' directory of your app and prepend that filename with an underscore and the name of the social media site. For example, to overwrite the Facebook button: Create a file called _facebook.html.erb that goes in the 'app/views/shareable/' directory.
@@ -117,7 +117,7 @@ Add an XML namespace fb='http://ogp.me/ns/fb#' to the html tag of your view. Eg:
 
 This is necessary for XFBML to work in earlier versions of Internet Explorer.
 
-#### Styling for social buttons
+#### Styling for Buttons
 For horizontally aligned buttons, try this CSS:
 
 ```no-highlight
@@ -137,7 +137,7 @@ If you use the default configuration options and styling above, the output shoul
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
-**Important:** If your project uses Rails 4, then I recommend you set configuration option *turbolinks* to **true**. Otherwise social buttons proabably won't appear on web pages where you haven't disabled Turbolinks.
+**Important:** If your project uses Rails 4, then it's very likely you should set the *turbolinks* option to **true**. Otherwise social buttons won't appear on pages loaded using Turbolinks (the default way is by Turbolinks in Rails 4).
 
 Shareable is compatible with Turbolinks but requires the javascript library [jQuery](https://github.com/rails/jquery-rails). Turbolinks support is turned off by default. To enable Turbolinks support, first make sure your app uses jQuery then set configuration option *turbolinks* in your local 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value **true**. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
 
@@ -162,7 +162,7 @@ rails g shareable:config
 String values are expected for nearly all of the configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
  * static_link - **false** by default. See [Static Links](https://github.com/hermango/shareable#static-links).
  * button_only - **false** by default. If set to **true**, javascript code for buttons is omitted.
- * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery. See [Turbolinks](https://github.com/hermango/shareable#turbolinks). 
+ * turbolinks - **false** by default. When set to **true**, javascript buttons will work with Turbolinks. Relies on jQuery. See [Turbolinks](https://github.com/hermango/shareable#turbolinks). 
 
 ---
 
