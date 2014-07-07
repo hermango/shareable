@@ -139,7 +139,7 @@ If you use the default configuration options and styling above, the output shoul
 ###Turbolinks
 **Important:** If your project uses Rails 4, then it's very likely you should set the *turbolinks* option to **true**. Otherwise social buttons won't appear on pages loaded using Turbolinks (the default way is by Turbolinks in Rails 4).
 
-Shareable is compatible with Turbolinks but requires the javascript library [jQuery](https://github.com/rails/jquery-rails). Turbolinks support is turned off by default. To enable Turbolinks support, first make sure your app uses jQuery then set configuration option *turbolinks* in your local 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value **true**. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
+This gem works with Turbolinks however the javascript library [jQuery](https://github.com/rails/jquery-rails) is required. Turbolinks support in Shareable is turned off by default. To enable Turbolinks support, first make sure your app includes jQuery then set configuration option *turbolinks* in your local 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value **true**. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
 
 ```
 <%= render_shareable :turbolinks => true, :facebook => {:turbolinks => false} %>
