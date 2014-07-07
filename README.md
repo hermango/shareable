@@ -137,7 +137,7 @@ If you use the default configuration options and styling above, the output shoul
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
-**Important:** If your project uses Rails 4, it's highly recommended you set configuration option *turbolinks* to **true**. Otherwise social buttons may fail to appear on your web pages.
+**Important:** If your project uses Rails 4, then I recommend you set configuration option *turbolinks* to **true**. Otherwise social buttons proabably won't appear on web pages where you haven't disabled Turbolinks.
 
 Shareable is compatible with Turbolinks but requires the javascript library [jQuery](https://github.com/rails/jquery-rails). Turbolinks support is turned off by default. To enable Turbolinks support, first make sure your app uses jQuery then set configuration option *turbolinks* in your local 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value **true**. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
 
