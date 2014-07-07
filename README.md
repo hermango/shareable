@@ -137,6 +137,8 @@ If you use the default configuration options and styling above, the output shoul
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" alt="horizontal row of evenly aligned social media buttons." />
 
 ###Turbolinks
+**Important:** If your project uses Rails 4, it's highly recommended you set configuration option *turbolinks* to **true**. Otherwise social buttons may fail to appear on your web pages.
+
 Shareable is compatible with Turbolinks but requires the javascript library [jQuery](https://github.com/rails/jquery-rails). Turbolinks support is turned off by default. To enable Turbolinks support, first make sure your app uses jQuery then set configuration option *turbolinks* in your local 'shareable.rb' [configuration](https://github.com/hermango/shareable/blob/master/README.md#configuration) file to boolean value **true**. The *turbolinks* option can also be passed as a hash value to the render_shareable method like this:
 
 ```
@@ -160,7 +162,7 @@ rails g shareable:config
 String values are expected for nearly all of the configuration options. Any values passed as configuration options not enclosed in quotation marks will cause errors! Four configuration options are exceptions to this rule. The configuration option *names* (also called *buttons* when passed to the render_shareable helper method) expects an array of strings ([see the configuration file for more details](https://github.com/hermango/shareable/blob/master/lib/shareable/config.rb)). The other three configuration options expect boolean values only and are the following:
  * static_link - **false** by default. See [Static Links](https://github.com/hermango/shareable#static-links).
  * button_only - **false** by default. If set to **true**, javascript code for buttons is omitted.
- * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery. If you're using Rails 4, it's recommended you set this to **true**. 
+ * turbolinks - **false** by default. When set to **true**, social buttons will work with Turbolinks. Relies on jQuery. See [Turbolinks](https://github.com/hermango/shareable#turbolinks). 
 
 ---
 
