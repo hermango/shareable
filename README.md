@@ -1,7 +1,7 @@
 Shareable
 =========
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" title="Shareable makes social media buttons." /><br/>
-A gem for adding social buttons to your Rails app. This gem runs with minimal configuration<sup>*</sup> and offers many options for complete personalization of your social buttons. You can generate javascript buttons or static links. Render buttons for the most popular social media sites and your own custom code with a single method call. Buttons are available for the following social networks:
+A gem for adding social buttons to your Rails app. This gem runs with minimal configuration<sup>*</sup> and offers many options for personalizing your social buttons. You can generate javascript buttons or static links. Render buttons for the most popular social media sites and your own custom code with a single method call. Buttons are available for the following social networks:
   - Facebook
   - Twitter
   - Pinterest
@@ -124,8 +124,7 @@ For horizontally aligned buttons, try this CSS:
 nav.share {display:inline-block;} /* shareable's nav tag */
 nav.share div {float:left;}
 nav.share iframe {border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
-#___plusone_0 {max-width:70px; font-size: default !important;}
-.twitter-share-button, .twitter-count-horizontal {max-width:80px;}
+#___plusone_0 {font-size: default !important;}
 .fb_iframe_widget span { vertical-align: top; }
 .fb_edge_widget_with_comment { vertical-align: top;}
 .fb-like{display:inline-block}
