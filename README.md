@@ -1,7 +1,7 @@
 Shareable
 =========
 <img src="https://cloud.githubusercontent.com/assets/28847/3418917/8883ea2e-fe51-11e3-81f4-368f184b9a49.png" title="Shareable makes social media buttons." /><br/>
-A gem for adding social buttons to your Rails app. Shareable runs with zero configuration<sup>*</sup> and offers many useful customization features. Rendering javascript buttons and static links is easy. Generate all the social buttons you want with a single method call. Buttons are available for the following social media sites:
+A gem for adding social buttons to your Rails app. This gem runs with minimal configuration<sup>*</sup> and offers many options for complete personalization of your social buttons. You can generate javascript buttons or static links. Render buttons for the most popular social media sites and your own custom code with a single method call. Buttons are available for the following social networks:
   - Facebook
   - Twitter
   - Pinterest
@@ -13,7 +13,7 @@ A gem for adding social buttons to your Rails app. Shareable runs with zero conf
 
 The Shareable gem supports Rails 3 and 4.
 
-<sub>* If you're using Turbolinks, set configuration option *turbolinks* to **true** ([see Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't displayed by default ([see Configuration](https://github.com/hermango/shareable#configuration)).</sub>
+<sub>* If your app uses Rails 4 or Turbolinks, set configuration option *turbolinks* to **true** ([see Turbolinks](https://github.com/hermango/shareable#turbolinks)).</sub><sub> ** Tumblr and StumbleUpon buttons aren't displayed by default ([see Configuration](https://github.com/hermango/shareable#configuration)).</sub>
 
 
 Install
@@ -122,8 +122,8 @@ For horizontally aligned buttons, try this CSS:
 
 ```no-highlight
 nav.share {display:inline-block;} /* shareable's nav tag */
-nav.share div {float:left; overflow:hidden;}
-nav.share iframe {max-height:20px; border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
+nav.share div {float:left;}
+nav.share iframe {border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
 #___plusone_0 {max-width:70px; font-size: default !important;}
 .twitter-share-button, .twitter-count-horizontal {max-width:80px;}
 .fb_iframe_widget span { vertical-align: top; }
