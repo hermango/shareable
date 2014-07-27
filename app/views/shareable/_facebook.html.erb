@@ -10,9 +10,18 @@
     <% end %>
   <% end %>
   <%= render :layout => "shareable/partials/button_wrapper", locals: {:options => options} do %>
-<div class="fb-like"
-  <%= html_attributes(options.slice(:url, :send, :layout, :show_faces, :width, :action, :font, :colorscheme, :ref, :share, :kid_directed_site), :data => true) %>
-></div>
+<div class="fb-like" data-href='<%= options[:url] %>'
+     data-send='<%= options[:send] %>'
+     data-layout='<%= options[:layout] %>'
+     data-show-faces='<%= options[:show_faces] %>'
+     data-width='<%= options[:width] %>'
+     data-action='<%= options[:action] %>'
+     data-font='<%= options[:font] %>'
+     data-colorscheme='<%= options[:colorscheme] %>'
+     data-ref='<%= options[:ref] %>'
+     data-share='<%= options[:share] %>'
+     data-kid-directed-site='<%= options[:kid_directed_site] %>' >
+</div>
   <% end %>
   <% if options[:turbolinks] && !options[:button_only] %>
     <%= output_once :facebook do %>
