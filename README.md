@@ -109,14 +109,6 @@ Both variables can be overridden when passed to the render_shareable method as h
 <%= render_shareable :twitter => {:button_caption => 'Tweet this!'} %>
 ```
 
-#### Facebook compatibility with Internet Explorer
-Add an XML namespace fb='http://ogp.me/ns/fb#' to the html tag of your view. Eg: 
-```no-highlight
-<html xmlns:fb="http://ogp.me/ns/fb#">
-```
-
-This is necessary for XFBML to work in earlier versions of Internet Explorer.
-
 #### Styling for Buttons
 For horizontally aligned buttons, try this CSS:
 
