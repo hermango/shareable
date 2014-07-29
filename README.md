@@ -113,10 +113,11 @@ Both variables can be overridden when passed to the render_shareable method as h
 For horizontally aligned buttons, try this CSS:
 
 ```no-highlight
-nav.share {display:inline-block;} /* shareable's nav tag */
+nav.share {display:inline-block;padding-left:40px;} /* shareable's nav tag */
 nav.share div {float:left;}
-nav.share iframe {border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
-#___plusone_0 {font-size: default !important;}
+nav.share span {padding-left:0;}
+nav.share iframe {align:bottom; border:0; margin-top:0; padding-top:0;} /* if using medium sized buttons */
+#___plusone_0 { font-size: default !important;}
 .fb_iframe_widget span { vertical-align: top; }
 .fb_edge_widget_with_comment { vertical-align: top;}
 .fb-like{display:inline-block}
