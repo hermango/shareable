@@ -20,11 +20,11 @@ Install
 --------
 Put this line in your Gemfile:
 
-  gem 'shareable'
+  `gem 'shareable'`
 
 Then run the bundle command:
 
-  bundle
+  `bundle`
 
 Usage
 ------
