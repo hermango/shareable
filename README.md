@@ -20,11 +20,15 @@ Install
 --------
 Put this line in your Gemfile:
 
+```ruby
   gem 'shareable'
+```
 
 Then run the bundle command:
 
+```
   bundle
+```
 
 Usage
 ------
